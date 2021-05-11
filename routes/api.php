@@ -21,10 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', 'AuthController@login');
 Route::post('/register', 'AuthController@register');
 
-Route::resource('membros', 'MembrosController');
-Route::resource('cargos', 'CargosController');
 
 Route::group([ 'middleware' => 'auth:api'], function() {
     Route::get('logout', 'AuthController@logout');
     Route::get('user', 'AuthController@user');
+    Route::resource('membros', 'MembrosController');
+    Route::resource('cargos', 'CargosController');
 });
