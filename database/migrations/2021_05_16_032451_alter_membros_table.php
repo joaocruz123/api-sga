@@ -16,7 +16,7 @@ class AlterMembrosTable extends Migration
         Schema::table('membros',function($table){
             $table->string("cpf")->change();
             $table->string("telefone")->change();
-            $table->string("celular")->change()
+            $table->string("celular")->change();
         });       
     }
 
