@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMembrosTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -14,9 +15,7 @@ class CreateMembrosTable extends Migration
     public function up()
     {
         Schema::create('membros', function (Blueprint $table) {
-            $table->id();
-
-            //Pessoal
+            $table->increments('id');
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('cpf')->unique();
@@ -25,8 +24,6 @@ class CreateMembrosTable extends Migration
             $table->string('celular')->nullable();
             $table->string('data_nascimento')->nullable();
             $table->string('estado_civil')->nullable();
-
-            //Endereço
             $table->string('cep')->nullable();
             $table->string('endereco')->nullable();
             $table->string('bairro')->nullable();
@@ -34,17 +31,14 @@ class CreateMembrosTable extends Migration
             $table->string('complemento')->nullable();
             $table->string('cidade')->nullable();
             $table->string('estado')->nullable();
-
-            //Proficional
             $table->string('profissao')->nullable();
             $table->string('endereco_trabalho')->nullable();
-            
-            //Atuação
-            $table->string('cargo')->nullable();
+            $table->string('atuacao')->nullable();
             $table->string('data_conversao')->nullable();
             $table->string('batizado')->nullable();
             $table->string('afastado')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -55,6 +49,6 @@ class CreateMembrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('membros');
+        Schema::drop('membros');
     }
 }

@@ -1,11 +1,13 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\Model\User;
+use App\Http\Controllers\AppBaseController;
+use App\Models\User;
 
-class AuthController extends Controller
+class AuthController extends AppBaseController
 {
     /**
      * Create user

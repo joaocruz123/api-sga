@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCargosTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -14,11 +15,12 @@ class CreateCargosTable extends Migration
     public function up()
     {
         Schema::create('cargos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nome');
             $table->string('descricao')->nullable();
             $table->boolean('ativo');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateCargosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cargos');
+        Schema::drop('cargos');
     }
 }
