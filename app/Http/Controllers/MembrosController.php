@@ -87,7 +87,7 @@ class MembrosController extends Controller
         $validator = Validator::make($request->all(), [
             'nome' =>               'required|string',
             'email' =>              'required|string|email',
-            'cpf' =>                'required|integer',
+            'cpf' =>                'required|string',
             'sexo' =>               'nullable|string',
             'telefone' =>           'nullable|integer',
             'celular' =>            'nullable|integer',

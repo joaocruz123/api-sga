@@ -19,10 +19,10 @@ class CreateMembrosTable extends Migration
             //Pessoal
             $table->string('nome');
             $table->string('email')->unique();
-            $table->integer('cpf')->unique();
+            $table->string('cpf')->unique();
             $table->string('sexo')->nullable();
-            $table->integer('telefone')->nullable();
-            $table->integer('celular')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('celular')->nullable();
             $table->string('data_nascimento')->nullable();
             $table->string('estado_civil')->nullable();
 
