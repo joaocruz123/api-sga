@@ -32,7 +32,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         //
 
-        parent::boot();
+        Route::prefix('api')
+                ->middleware('api')
+                ->as('api.')
+                ->namespace($this->app->getNamespace().'Http\Controllers\API')
+                ->group(base_path('routes/api.php'));
     }
 
     /**
