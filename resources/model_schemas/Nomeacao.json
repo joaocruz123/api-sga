@@ -97,14 +97,10 @@
     },
     {
         "type": "relation",
-        "relation": "mt1,Membros,id"
+        "relation": "mt1,Membros,membro_id,id"
     },
     {
         "type": "relation",
         "relation": "mt1,Cargos,cargo_id,id"
-    },
-    {
-        "type": "relation",
-        "relation": "status string text,"
     }
 ]

@@ -24,9 +24,13 @@ Route::post('/register', 'AuthController@register');
 
 Route::group([ 'middleware' => 'auth:api'], function() {
     Route::post('logout', 'AuthController@logout');
+
     Route::get('user', 'AuthController@user');
+
     Route::resource('membros', 'MembrosAPIController');
+
     Route::resource('cargos', 'CargosAPIController');
+    
+    Route::resource('nomeacaos', 'NomeacaoAPIController');
 });
 
-Route::resource('nomeacaos', 'NomeacaoAPIController');

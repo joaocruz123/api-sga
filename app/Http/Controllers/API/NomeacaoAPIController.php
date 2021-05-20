@@ -34,11 +34,7 @@ class NomeacaoAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $nomeacaos = $this->nomeacaoRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
+        $nomeacaos = Nomeacao::with(['membro', 'cargo'])->get();
 
         return $this->sendResponse($nomeacaos->toArray(), 'Nomeacaos retrieved successfully');
     }
