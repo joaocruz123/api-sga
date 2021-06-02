@@ -59,7 +59,9 @@ class MembrosAPIController extends AppBaseController
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(128, 128)->save( public_path('/uploads/avatars/'));
+            Image::make($avatar)->resize(128, 128)->save(public_path('/uploads/avatars/' . $filename));
+
+            $input["avatar"] = $filename;
         }
 
         $membros = $this->membrosRepository->create($input);
