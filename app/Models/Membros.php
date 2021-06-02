@@ -64,7 +64,8 @@ class Membros extends Model
         'atuacao',
         'data_conversao',
         'batizado',
-        'afastado'
+        'afastado',
+        'avatar'
     ];
 
     /**
@@ -94,7 +95,8 @@ class Membros extends Model
         'atuacao' => 'string',
         'data_conversao' => 'string',
         'batizado' => 'string',
-        'afastado' => 'string'
+        'afastado' => 'string',
+        'avatar' => 'string'
     ];
 
     /**
