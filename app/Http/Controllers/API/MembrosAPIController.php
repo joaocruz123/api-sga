@@ -109,6 +109,14 @@ class MembrosAPIController extends AppBaseController
             return $this->sendError('Membros not found');
         }
 
+        // if($request->hasFile('avatar') !== null){
+        //     $avatar = $request->file('avatar');
+        //     $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        //     Image::make($avatar)->resize(128, 128)->save(public_path('/uploads/avatars/' . $filename));
+
+        //     $input["avatar"] = $filename;
+        // }
+
         $membros = $this->membrosRepository->update($input, $id);
 
         return $this->sendResponse($membros->toArray(), 'Membros updated successfully');
