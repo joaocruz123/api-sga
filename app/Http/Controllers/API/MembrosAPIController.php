@@ -35,11 +35,12 @@ class MembrosAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $membros = $this->membrosRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
+        $membros = Membros::paginate(10);
+        // $membros = $this->membrosRepository->all(
+        //     $request->except(['skip', 'limit']),
+        //     $request->get('skip'),
+        //     $request->get('limit')
+        // );
 
         return $this->sendResponse($membros->toArray(), 'Membros retrieved successfully');
     }
