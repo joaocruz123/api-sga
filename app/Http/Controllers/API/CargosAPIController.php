@@ -34,11 +34,7 @@ class CargosAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $cargos = $this->cargosRepository->all(
-            $request->except(['skip', 'limit']),
-            $request->get('skip'),
-            $request->get('limit')
-        );
+        $cargos = Cargos::paginate(10);
 
         return $this->sendResponse($cargos->toArray(), 'Cargos retrieved successfully');
     }
