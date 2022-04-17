@@ -8,17 +8,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Nomeacoes
  * @package App\Models
- * @version April 16, 2022, 7:21 pm UTC
+ * @version April 16, 2022, 9:53 pm UTC
  *
  * @property integer $membro_id
  * @property integer $cargo_id
+ * @property string $inicio_mandato
+ * @property string $termino_mandato
+ * @property string $status
  */
 class Nomeacoes extends Model
 {
     use SoftDeletes;
 
     public $table = 'nomeacoes';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -26,7 +29,10 @@ class Nomeacoes extends Model
 
     public $fillable = [
         'membro_id',
-        'cargo_id'
+        'cargo_id',
+        'inicio_mandato',
+        'termino_mandato',
+        'status',
     ];
 
     /**
@@ -37,7 +43,10 @@ class Nomeacoes extends Model
     protected $casts = [
         'id' => 'integer',
         'membro_id' => 'integer',
-        'cargo_id' => 'integer'
+        'cargo_id' => 'integer',
+        'inicio_mandato' => 'string',
+        'termino_mandato' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -46,8 +55,9 @@ class Nomeacoes extends Model
      * @var array
      */
     public static $rules = [
-        
+        'membro_id' => 'required',
+        'cargo_id' => 'required',
     ];
 
-    
+
 }

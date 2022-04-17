@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNomeacaosTable extends Migration
+class CreateNomeacoesTable extends Migration
 {
 
     /**
@@ -14,7 +14,7 @@ class CreateNomeacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('nomeacaos', function (Blueprint $table) {
+        Schema::create('nomeacoes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('membro_id')->unsigned();
             $table->integer('cargo_id')->unsigned();
@@ -35,6 +35,6 @@ class CreateNomeacaosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nomeacaos');
+        Schema::drop('nomeacoes');
     }
 }

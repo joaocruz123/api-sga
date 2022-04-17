@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class NomeacoesRepository
  * @package App\Repositories
- * @version April 16, 2022, 7:21 pm UTC
+ * @version April 16, 2022, 9:53 pm UTC
 */
 
 class NomeacoesRepository extends BaseRepository
@@ -18,7 +18,10 @@ class NomeacoesRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'membro_id',
-        'cargo_id'
+        'cargo_id',
+        'inicio_mandato',
+        'termino_mandato',
+        'status'
     ];
 
     /**

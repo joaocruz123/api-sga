@@ -25,5 +25,7 @@ Route::group([ 'middleware' => 'auth:api'], function() {
     Route::get('user', 'AuthController@user');
     Route::resource('membros', 'MembrosAPIController');
     Route::resource('cargos', 'CargosAPIController');
-    Route::resource('nomeacaos', 'NomeacaoAPIController');
 });
+
+
+Route::resource('nomeacoes', 'NomeacoesAPIController');
